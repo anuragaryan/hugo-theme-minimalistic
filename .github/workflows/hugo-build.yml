@@ -1,0 +1,48 @@
+name: Hugo build
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hugo-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Hugo ${{ matrix.hugo-version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        hugo-version:
+          - "0.165.0"
+          - latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ matrix.hugo-version }}
+          extended: true
+
+      - name: Build example site
+        run: >-
+          hugo
+          --source exampleSite
+          --gc
+          --minify
+          --panicOnWarning
+          --noBuildLock

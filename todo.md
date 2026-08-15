@@ -122,15 +122,15 @@ hugo --source exampleSite --gc --minify --panicOnWarning --noBuildLock
   - [x] `public/`
   - [x] `resources/`
   - [x] `node_modules/`
-- [ ] Add GitHub Actions workflow:
-  - [ ] build `exampleSite`
-  - [ ] run Hugo with `--gc --minify`
-  - [ ] test latest Hugo
-  - [ ] optionally test minimum supported Hugo
-- [ ] Add release/tag guidance:
-  - [ ] first tag, e.g. `v0.1.0`
-  - [ ] instructions for consuming via Hugo Modules
-  - [ ] instructions for local development using `replace`
+- [x] Add GitHub Actions workflow:
+  - [x] build `exampleSite`
+  - [x] run Hugo with `--gc --minify --panicOnWarning --noBuildLock`
+  - [x] test latest Hugo Extended
+  - [x] test minimum supported Hugo Extended `0.165.0`
+- [x] Add release/tag guidance in `RELEASING.md`:
+  - [x] plan `v0.1.0` as the first annotated tag and GitHub Release after verification
+  - [x] add instructions for consuming a tagged release via Hugo Modules
+  - [x] add instructions for local development using `replace`
 - [ ] Verify clean fresh-clone workflow:
   - [ ] clone theme repo
   - [ ] build example site

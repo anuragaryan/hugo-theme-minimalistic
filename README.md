@@ -281,6 +281,10 @@ When using this theme locally from another site, add a `replace` directive in th
 replace github.com/anuragaryan/hugo-theme-minimalistic => ../hugo-theme-minimalistic
 ```
 
+## Releasing
+
+The planned first public version is `v0.1.0`. See [`RELEASING.md`](RELEASING.md) for the clean-clone checks, annotated-tag procedure, GitHub Release command, published-module consumption and local `replace` workflow.
+
 ## License
 
 MIT. This theme is derived from `hugo-sustain` by Nurlan Su. See `LICENSE.md` and `theme.toml` for attribution details.
