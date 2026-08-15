@@ -38,11 +38,5 @@ jobs:
           hugo-version: ${{ matrix.hugo-version }}
           extended: true
 
-      - name: Build example site
-        run: >-
-          hugo
-          --source exampleSite
-          --gc
-          --minify
-          --panicOnWarning
-          --noBuildLock
+      - name: Check theme
+        run: scripts/check-theme-readiness.sh

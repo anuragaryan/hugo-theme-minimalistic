@@ -265,6 +265,12 @@ public
 
 ## Development
 
+Run the standard Hugo theme check:
+
+```bash
+scripts/check-theme-readiness.sh
+```
+
 Build the example site from this repository:
 
 ```bash
