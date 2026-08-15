@@ -244,8 +244,12 @@ public
 Build the example site from this repository:
 
 ```bash
-hugo --source exampleSite --themesDir ../.. --theme hugo-theme-minimalistic --gc --minify
+hugo --source exampleSite --gc --minify --panicOnWarning --noBuildLock
 ```
+
+The example site's `go.mod` contains a local `replace` directive pointing to
+the parent theme checkout, so this command tests the module-first setup without
+fetching a published release.
 
 When using this theme locally from another site, add a `replace` directive in the site's `go.mod`:
 

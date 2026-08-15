@@ -83,10 +83,10 @@
   - [x] projects page
   - [x] optional resume page
 - [x] Add sample `data/projects.yml` with three generic project entries
-- [ ] Verify this command works:
+- [x] Verify the module-first example build:
 
 ```bash
-hugo --source exampleSite --themesDir ../.. --theme hugo-theme-minimalistic --gc --minify
+hugo --source exampleSite --gc --minify --panicOnWarning --noBuildLock
 ```
 
 ## 5. Modernize frontend
@@ -116,12 +116,12 @@ hugo --source exampleSite --themesDir ../.. --theme hugo-theme-minimalistic --gc
 
 ## 6. CI/release readiness
 
-- [ ] Add `.gitignore`:
-  - [ ] `.DS_Store`
-  - [ ] `.hugo_build.lock`
-  - [ ] `public/`
-  - [ ] `resources/`
-  - [ ] `node_modules/`
+- [x] Add `.gitignore`:
+  - [x] `.DS_Store`
+  - [x] `.hugo_build.lock`
+  - [x] `public/`
+  - [x] `resources/`
+  - [x] `node_modules/`
 - [ ] Add GitHub Actions workflow:
   - [ ] build `exampleSite`
   - [ ] run Hugo with `--gc --minify`
