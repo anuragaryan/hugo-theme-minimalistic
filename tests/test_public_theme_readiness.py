@@ -84,20 +84,25 @@ def test_example_site_uses_this_theme_and_generic_identity():
     assert "Anurag Aryan" not in cfg
 
 
-def test_asset_urls_use_hugo_helpers_and_allow_external_custom_assets():
+def test_asset_urls_use_hugo_pipes_and_allow_external_custom_assets():
     head = read("layouts/partials/head.html")
     scripts = read("layouts/partials/js.html")
     combined = head + scripts
 
     assert ".Site.BaseURL" not in combined
+    assert '"img/favicon.ico" | relURL' in head
+
     for asset in [
-        '"img/favicon.ico" | relURL',
-        '"css/main.css" | relURL',
-        '"css/resume.css" | relURL',
-        '"css/blogpost.css" | relURL',
-        '"js/ie10-viewport-bug-workaround.js" | relURL',
+        'resources.Get "css/main.css"',
+        'resources.Get "css/resume.css"',
+        'resources.Get "css/blogpost.css"',
+        'resources.Get "css/chroma.css"',
+        'resources.Get "css/dark.css"',
     ]:
-        assert asset in combined
+        assert asset in head
+    assert 'resources.Concat "css/theme.css"' in head
+    assert 'fingerprint "sha384"' in head
+    assert '"js/ie10-viewport-bug-workaround.js"' not in combined
 
     assert 'strings.HasPrefix $asset "http://"' in head
     assert 'strings.HasPrefix $asset "https://"' in head

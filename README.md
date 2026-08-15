@@ -283,7 +283,7 @@ replace github.com/anuragaryan/hugo-theme-minimalistic => ../hugo-theme-minimali
 
 ## Releasing
 
-The planned first public version is `v0.1.0`. See [`RELEASING.md`](RELEASING.md) for the clean-clone checks, annotated-tag procedure, GitHub Release command, published-module consumption and local `replace` workflow.
+The current public baseline is `v0.1.0`. See [`RELEASING.md`](RELEASING.md) for the clean-clone checks, annotated-tag procedure, GitHub Release command, published-module consumption, and local `replace` workflow for future releases.
 
 ## License
 

@@ -30,7 +30,7 @@
     -}}
     {{- $bundle := $styles | resources.Concat "css/theme.css" | minify | fingerprint "sha384" -}}
     <link rel="stylesheet" href="{{ $bundle.RelPermalink }}" integrity="{{ $bundle.Data.Integrity }}" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400;700&display=swap">
     {{ range .Site.Params.custom_css }}
     {{- $asset := . -}}
     <link rel="stylesheet" href="{{ if or (strings.HasPrefix $asset "http://") (strings.HasPrefix $asset "https://") (strings.HasPrefix $asset "//") }}{{ $asset }}{{ else }}{{ $asset | relURL }}{{ end }}">

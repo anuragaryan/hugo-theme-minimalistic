@@ -1,6 +1,6 @@
 # Releasing Minimalistic
 
-The planned first public release is `v0.1.0`. Create the tag only after the clean-clone and consumer-site checks pass.
+The first public release, `v0.1.0`, has been tagged and verified. Use this guide for future patch/minor releases; create a new version tag only after the clean-clone and consumer-site checks pass.
 
 ## Pre-release checklist
 
@@ -24,21 +24,22 @@ The planned first public release is `v0.1.0`. Create the tag only after the clea
 
 5. Review `README.md`, `theme.toml`, the license and release notes for accuracy.
 
-## Create `v0.1.0`
+## Create the next release tag
 
-Create an annotated tag from the verified `master` commit:
+Pick the next semantic version, for example `v0.1.1`, from the verified `master` commit:
 
 ```bash
-git tag -a v0.1.0 -m "Release v0.1.0"
-git push origin v0.1.0
+VERSION=v0.1.1
+git tag -a "$VERSION" -m "Release $VERSION"
+git push origin "$VERSION"
 ```
 
 Then create a GitHub Release from the existing tag:
 
 ```bash
-gh release create v0.1.0 \
+gh release create "$VERSION" \
   --verify-tag \
-  --title "Minimalistic v0.1.0" \
+  --title "Minimalistic $VERSION" \
   --generate-notes
 ```
 
