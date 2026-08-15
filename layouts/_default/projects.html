@@ -1,0 +1,25 @@
+{{ $projects := hugo.Data.projects }}
+<div class="container-fluid">
+  <div class="container">
+    <h2 class="text-center">{{ with $projects.name }}{{ . }}{{ else }}{{ .Title }}{{ end }}</h2>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        {{ with $projects.source }}
+          {{ range . }}
+            <h4>
+              {{ with .icon }}<i class="{{ . }}" aria-hidden="true"></i>&nbsp;&nbsp;{{ end }}
+              {{ if .url }}
+                <a class="project-name" href="{{ .url }}"><b>{{ .name | default "Project" }}</b></a>
+              {{ else }}
+                <span class="project-name-without-url"><b>{{ .name | default "Project" }}</b></span>
+              {{ end }}
+              {{ with .description }}&nbsp;-&nbsp;{{ . | markdownify }}{{ end }}
+            </h4>
+          {{ end }}
+        {{ else }}
+          <p class="text-center">No projects configured. Add entries to <code>data/projects.yml</code>.</p>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>

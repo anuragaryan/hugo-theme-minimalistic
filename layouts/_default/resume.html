@@ -1,0 +1,37 @@
+{{ $resume := hugo.Data.resume }}
+<div class="container-fluid resume">
+  <div class="container">
+    {{ with .Content }}
+      <div class="resume-intro">
+        {{ . }}
+      </div>
+    {{ end }}
+
+    {{ with $resume.sections }}
+      {{ range . }}
+        <section class="resume-section">
+          <h2>{{ .title }}</h2>
+          {{ range .items }}
+            {{ $item := . }}
+            <article class="resume-item">
+              {{ if $item.title }}
+                <h3><strong>{{ $item.title }}</strong>{{ with $item.subtitle }} | {{ . }}{{ end }}</h3>
+              {{ else }}
+                {{ with $item.subtitle }}<h3><strong>{{ . }}</strong></h3>{{ end }}
+              {{ end }}
+              {{ with $item.date }}<h4>{{ . }}</h4>{{ end }}
+              {{ with $item.summary }}<p>{{ . | markdownify }}</p>{{ end }}
+              {{ with $item.details }}
+                <ul>
+                  {{ range . }}<li>{{ . | markdownify }}</li>{{ end }}
+                </ul>
+              {{ end }}
+            </article>
+          {{ end }}
+        </section>
+      {{ end }}
+    {{ else }}
+      <p class="text-center">No resume data found. Add sections to <code>data/resume.yml</code> or override this layout in your site.</p>
+    {{ end }}
+  </div>
+</div>

@@ -1,0 +1,18 @@
+name = "Minimalistic"
+license = "MIT"
+licenselink = "https://github.com/anuragaryan/hugo-theme-minimalistic/blob/main/LICENSE.md"
+description = "A minimal, responsive Hugo theme for personal websites, blogs, project pages, and lightweight resumes."
+homepage = "https://github.com/anuragaryan/hugo-theme-minimalistic"
+demosite = "https://anuragaryan.github.io/"
+tags = ["blog", "portfolio", "personal", "minimal", "responsive", "hugo-modules"]
+features = ["blog", "projects", "resume", "social links", "responsive layout", "Hugo Modules"]
+min_version = "0.165.0"
+
+[author]
+  name = "Anurag Aryan"
+  homepage = "https://anuragaryan.com"
+
+[original]
+  name = "hugo-sustain"
+  homepage = "https://themes.gohugo.io/themes/hugo-sustain/"
+  repo = "https://github.com/nurlansu/hugo-sustain"

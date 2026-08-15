@@ -1,0 +1,30 @@
+sections:
+  - title: Experience
+    items:
+      - title: Staff Software Engineer
+        subtitle: Example Co.
+        date: 2024 – Present
+        details:
+          - Lead architecture for reliable backend systems.
+          - Mentor engineers and improve delivery practices.
+      - title: Senior Software Engineer
+        subtitle: Previous Co.
+        date: 2020 – 2024
+        details:
+          - Built customer-facing web products.
+          - Improved observability, testing, and incident response.
+
+  - title: Skills
+    items:
+      - title: Programming
+        details:
+          - Go, Python, JavaScript, TypeScript
+      - title: Platforms
+        details:
+          - Kubernetes, PostgreSQL, AWS, CI/CD
+
+  - title: Education
+    items:
+      - title: B.S. Computer Science
+        subtitle: Example University
+        date: 2016

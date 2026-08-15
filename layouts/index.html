@@ -1,0 +1,17 @@
+{{ partial "head" . }}
+  <body>
+    {{ partial "header" . }}
+    <main class="container-fluid">
+      <div class="container">
+        <h1 class="heading">{{ .Site.Params.homeTitle | default .Site.Title }}</h1>
+        {{ with .Site.Params.homeDescription }}
+          <p class="description">{{ . | markdownify }}</p>
+        {{ else with .Site.Params.description }}
+          <p class="description">{{ . | markdownify }}</p>
+        {{ end }}
+      </div>
+    </main>
+    {{ partial "social.html" . }}
+    {{ partial "footer" . }}
+  </body>
+</html>

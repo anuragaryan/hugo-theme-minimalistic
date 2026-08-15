@@ -1,0 +1,4 @@
+{{ $copyright := .Site.Params.copyright | default .Site.Params.author | default .Site.Title }}
+<p class="copyright">&copy; {{ $copyright }} | <script>document.write(new Date().getFullYear())</script></p>
+
+{{ partial "js" . }}

@@ -1,0 +1,16 @@
+name: Projects
+source:
+  - name: Minimal Theme Starter
+    icon: fa fa-github
+    url: https://github.com/example/minimal-theme-starter
+    description: A starter project showing how to use the Minimalistic theme with Hugo Modules.
+
+  - name: Personal Knowledge Base
+    icon: fa fa-book
+    url: https://example.com/projects/knowledge-base
+    description: A compact writing and notes site built with Hugo.
+
+  - name: Portfolio Archive
+    icon: fa fa-globe
+    url: https://example.com/projects/portfolio
+    description: A small portfolio that highlights selected technical projects.

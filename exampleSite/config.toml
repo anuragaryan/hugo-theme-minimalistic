@@ -1,0 +1,49 @@
+baseURL = "https://example.com/"
+locale = "en-US"
+title = "Minimalistic Demo"
+
+[module]
+
+[[module.imports]]
+  path = "github.com/anuragaryan/hugo-theme-minimalistic"
+
+[services]
+  [services.disqus]
+    shortname = ""
+
+[permalinks]
+  post = "/:year/:month/:day/:slug"
+
+[params]
+  author = "Minimalistic Demo"
+  description = "A minimal Hugo theme demo site."
+  homeTitle = "Minimalistic Demo"
+  homeDescription = "A clean Hugo theme for personal sites, blogs, projects, and lightweight resumes."
+  copyright = "Minimalistic Demo"
+  custom_css = []
+  custom_js  = []
+
+[params.social]
+  Github        = "anuragaryan/hugo-theme-minimalistic"
+  Email         = "hello@example.com"
+  Twitter       = "minimalistic-demo"
+  LinkedIn      = "minimalistic-demo"
+  Stackoverflow = "users/123456/minimalistic-demo"
+  Instagram     = "minimalistic-demo"
+
+## Main Menu
+[[menu.main]]
+  name = "blog"
+  weight = 100
+  identifier = "blog"
+  url = "/blog/"
+[[menu.main]]
+  name = "projects"
+  identifier = "projects"
+  weight = 200
+  url = "/projects/"
+[[menu.main]]
+  name = "resume"
+  identifier = "resume"
+  weight = 300
+  url = "/resume/"
