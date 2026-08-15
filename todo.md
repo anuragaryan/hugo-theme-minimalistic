@@ -132,7 +132,7 @@ hugo --source exampleSite --gc --minify --panicOnWarning --noBuildLock
   - [x] add instructions for consuming a tagged release via Hugo Modules
   - [x] add instructions for local development using `replace`
 - [ ] Verify clean fresh-clone workflow:
-  - [ ] clone theme repo
-  - [ ] build example site
-  - [ ] consume theme from website repo
-- [ ] Decide when to remove local `replace` from the website repo and consume a tagged public version
+  - [x] clone the pushed theme repository into a temporary directory
+  - [x] build the fresh clone's `exampleSite` on Hugo `0.165.0`
+  - [ ] consume the tagged theme from a separate website after `v0.1.0` is published
+- [x] Remove the website's local `replace` only after `v0.1.0` is published and verified from a separate consumer
