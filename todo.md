@@ -91,28 +91,28 @@ hugo --source exampleSite --gc --minify --panicOnWarning --noBuildLock
 
 ## 5. Modernize frontend
 
-- [ ] Replace or upgrade old frontend dependencies:
-  - [ ] Bootstrap `4.0.0-beta.2`
-  - [ ] Font Awesome `4.7.0`
-  - [ ] jQuery `3.2.1 slim`
-  - [ ] Popper `1.12.3`
-  - [ ] Highlight.js `9.7.0`
-- [ ] Remove IE10 viewport workaround unless explicitly supported
-- [ ] Prefer Hugo Chroma for syntax highlighting
-- [ ] Consider Hugo Pipes for CSS/JS:
-  - [ ] move assets to `assets/`
-  - [ ] minify
-  - [ ] fingerprint
-  - [ ] cache-bust
-- [ ] Improve accessibility:
-  - [ ] add accessible labels to icon-only social links
-  - [ ] add `rel="noopener noreferrer"` for `target="_blank"`
-  - [ ] use HTTPS social URLs
-  - [ ] add active/current nav state
-- [ ] Make styling configurable:
-  - [ ] accent color
-  - [ ] font options
-  - [ ] optional dark mode
+- [x] Replace or upgrade old frontend dependencies:
+  - [x] Upgrade Bootstrap `4.0.0-beta.2` to `5.3.8`
+  - [x] Upgrade Font Awesome `4.7.0` to `6.7.2`
+  - [x] Remove jQuery `3.2.1 slim`
+  - [x] Remove the standalone Popper `1.12.3` include; use the Bootstrap bundle
+  - [x] Remove Highlight.js `9.7.0`
+- [x] Remove the IE10 viewport workaround and obsolete IE<9 compatibility shims
+- [x] Use class-based Hugo Chroma syntax highlighting with a bundled GitHub light stylesheet
+- [x] Use Hugo Pipes for the theme's local CSS (there is no local theme JavaScript to process):
+  - [x] move local CSS to `assets/`
+  - [x] concatenate and minify
+  - [x] fingerprint with SHA-384
+  - [x] cache-bust via the fingerprinted URL
+- [x] Improve accessibility:
+  - [x] add accessible labels to icon-only social links
+  - [x] add `rel="noopener noreferrer"` for `target="_blank"`
+  - [x] use HTTPS social URLs
+  - [x] add Bootstrap active styling and `aria-current="page"` to the current nav link
+- [x] Make styling configurable:
+  - [x] accent color through `params.accentColor`
+  - [x] font stack through the `--font-family` CSS custom property
+  - [x] optional `auto`, `light`, or `dark` mode with matching Chroma palettes
 
 ## 6. CI/release readiness
 

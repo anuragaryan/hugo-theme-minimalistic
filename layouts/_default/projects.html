@@ -9,7 +9,7 @@
             <h4>
               {{ with .icon }}<i class="{{ . }}" aria-hidden="true"></i>&nbsp;&nbsp;{{ end }}
               {{ if .url }}
-                <a class="project-name" href="{{ .url }}"><b>{{ .name | default "Project" }}</b></a>
+                <a class="project-name" href="{{ .url }}" target="_blank" rel="noopener noreferrer"><b>{{ .name | default "Project" }}</b></a>
               {{ else }}
                 <span class="project-name-without-url"><b>{{ .name | default "Project" }}</b></span>
               {{ end }}

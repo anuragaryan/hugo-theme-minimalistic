@@ -22,6 +22,7 @@ Before publishing the repository to a theme gallery, add a full-size preview at
 - Configurable social links
 - Custom CSS and JavaScript hooks
 - Responsive Bootstrap-based layout
+- Class-based Hugo Chroma syntax highlighting with a GitHub light palette
 - Hugo Modules support
 
 ## Requirements
@@ -85,6 +86,10 @@ baseURL = "https://example.com/"
 title = "Jane Developer"
 locale = "en-US"
 
+[markup]
+  [markup.highlight]
+    noClasses = false
+
 [module]
 
 [[module.imports]]
@@ -96,6 +101,8 @@ locale = "en-US"
   homeTitle = "Hi, I'm Jane."
   homeDescription = "I build reliable software systems and write about engineering."
   copyright = "Jane Developer"
+  accentColor = "#27A822"
+  darkMode = "auto"
   custom_css = []
   custom_js = []
 
@@ -137,7 +144,6 @@ Create posts under `content/blog/`:
 title = "My first post"
 date = "2026-01-01"
 tags = ["hugo", "web"]
-highlight = true
 +++
 
 Post content goes here.
@@ -160,7 +166,7 @@ Then configure projects in `data/projects.yml`:
 name: Projects
 source:
   - name: Example Project
-    icon: fa fa-github
+    icon: fa-brands fa-github
     url: https://github.com/example/project
     description: A short description of the project.
 ```
@@ -213,7 +219,25 @@ The theme supports GitHub, LinkedIn, Twitter/X, StackOverflow, Instagram, and em
 
 ### Colors and layout
 
-The current accent color is defined in `static/css/main.css`. A future release may expose this via CSS custom properties or Hugo params.
+Set `params.accentColor` to any valid CSS color. It defaults to `#27A822` and is processed into `assets/css/main.css` before Hugo Pipes bundles, minifies, and fingerprints the theme's local styles.
+
+The default font stack is exposed as the `--font-family` CSS custom property. Override it from a stylesheet listed in `params.custom_css`:
+
+```css
+:root {
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+```
+
+If the selected font is not installed locally, load it from the same custom stylesheet or another stylesheet in `params.custom_css`.
+
+Set `params.darkMode` to one of:
+
+- `"auto"` (default): follow the visitor's operating-system preference.
+- `"light"`: always use the light palette.
+- `"dark"`: always use the dark palette.
+
+Dark mode uses a GitHub dark Chroma palette for highlighted code and requires no client-side JavaScript.
 
 ## Deployment
 

@@ -14,12 +14,18 @@ title = "Minimalistic Demo"
 [permalinks]
   post = "/:year/:month/:day/:slug"
 
+[markup]
+  [markup.highlight]
+    noClasses = false
+
 [params]
   author = "Minimalistic Demo"
   description = "A minimal Hugo theme demo site."
   homeTitle = "Minimalistic Demo"
   homeDescription = "A clean Hugo theme for personal sites, blogs, projects, and lightweight resumes."
   copyright = "Minimalistic Demo"
+  accentColor = "#27A822"
+  darkMode = "auto"
   custom_css = []
   custom_js  = []
 

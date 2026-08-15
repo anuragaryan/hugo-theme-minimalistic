@@ -3,7 +3,6 @@ title = "Customizing Minimalistic"
 description = "Use site parameters and local assets without editing the theme."
 date = "2026-01-29"
 tags = ["hugo", "customization", "css"]
-highlight = true
 +++
 
 A reusable Hugo theme should rarely require direct edits. Minimalistic exposes common identity, navigation, social-link, and asset settings through site configuration.

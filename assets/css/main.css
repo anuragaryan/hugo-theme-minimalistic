@@ -1,21 +1,32 @@
+:root {
+  --accent-color: {{ .Site.Params.accentColor | default "#27A822" }};
+  --accent-color-hover: color-mix(in srgb, var(--accent-color) 80%, black);
+  --font-family: "Source Sans Pro", sans-serif;
+  --page-background: #fff;
+  --text-color: #212529;
+  --nav-color: #333;
+}
+
 html,
 body {
-  border-top: 0.125em solid #27A822;
+  border-top: 0.125em solid var(--accent-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--page-background);
 }
 
 /********** Common Style************/
 
 a {
-    color: #27A822;
+    color: var(--accent-color);
 }
 a:focus,
 a:hover {
   text-decoration: none;
-  color: #0c8c07;
+  color: var(--accent-color-hover);
 }
 h1 {
   font-size: 2em;
@@ -62,14 +73,15 @@ h6 {
 .nav-link {
   padding: .25em 0;
   font-weight: bold;
-  color: #333;
+  color: var(--nav-color);
   background-color: transparent;
   border-bottom: .25em solid transparent;
 }
 .nav-link:hover,
 .nav-link:focus,
+.nav-link.active,
 .brand-link:hover {
-  border-bottom-color: #27A822;
+  border-bottom-color: var(--accent-color);
 }
 .navbar-nav {
   float: right;
@@ -88,13 +100,14 @@ h6 {
 }
 
 .btn-outline-secondary {
-  color: #27A822;
-  border-color: #27A822;
+  color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 .btn-outline-secondary:focus,
 .btn-outline-secondary:hover {
   color: #FFF;
-  background-color: #27A822;
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 /*******Footer Section*******/
@@ -104,7 +117,7 @@ h6 {
 .copyright {
   text-align: center;
   padding: 1em;
-  border-bottom: 0.25em solid #27A822;
+  border-bottom: 0.25em solid var(--accent-color);
   margin-bottom: 0;
 }
 
